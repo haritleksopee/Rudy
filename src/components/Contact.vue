@@ -10,10 +10,14 @@
         <textarea class="form-control" placeholder="รายละเอียด" v-model="detail" rows="5"></textarea>
       </div>
       <div class="form-group text-center">    
-        <button type="button" class="btn btn-secondary" @click="persist">Secondary</button>
+        <button type="button" class="btn btn-secondary" @click="persist">submit</button>
       </div>
 
-
+      
+<!-- 
+      <div v-for="name in cats">
+          {{ name }}
+      </div> -->
 
       <table class="table table-striped">
           <thead>
@@ -24,10 +28,10 @@
               </tr>
           </thead>
           <tbody>
-              <tr v-for="(cat,n) in 1">
+              <tr >
                   <td class="text-center">{{ cats }}</td>
-                  <td class="text-center">{{ email }}</td>
-                  <td class="text-center">john@example.com</td>
+                  <td class="text-center">{{ eamils }}</td>
+                  <td class="text-center">{{ details }}</td>
               </tr>
           </tbody>
       </table>
@@ -41,9 +45,11 @@ export default {
   data() {
     return {
       name:'',
-      email: [],
+      email: '',
       detail: '',
-      cats:[]
+      cats:'',
+      eamils:'',
+      details:''
     }
   },
   mounted() {
@@ -54,12 +60,17 @@ export default {
   },
   methods: {
     persist() {
-      localStorage.name = this.name;
-      // localStorage.email = this.email;
-      localStorage.detail = this.detail;
       console.log('5555+');
+      let mail = JSON.stringify(this.email);
       let parsed = JSON.stringify(this.name);
+      let dt = JSON.stringify(this.detail);
       localStorage.setItem('cats', parsed);
+      localStorage.setItem('eamils', mail);
+      localStorage.setItem('details', dt);
+
+
+
+
 
       if(localStorage.getItem('cats')) {
         try {
@@ -69,16 +80,21 @@ export default {
         }
       }
 
-      if(localStorage.getItem('email')) {
+      if(localStorage.getItem('eamils')) {
         try {
-          this.email = JSON.parse(localStorage.getItem('email'));          
+          this.eamils = JSON.parse(localStorage.getItem('eamils'));          
         } catch(e) {
-          localStorage.removeItem('email');
+          localStorage.removeItem('eamils');
         }
       }
 
-
-      
+      if(localStorage.getItem('details')) {
+        try {
+          this.details = JSON.parse(localStorage.getItem('details'));          
+        } catch(e) {
+          localStorage.removeItem('details');
+        }
+      }
     }
   },
 }

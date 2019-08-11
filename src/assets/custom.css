@@ -40,3 +40,30 @@
     align-items: center;
     height: 100%;
 }
+
+@media (max-width:575px) {
+    .banner-content h1 {
+        font-size: 4vmin;
+    }
+    .banner-content b {
+        font-size: 9px;
+    }
+    .about-content .d-block h2 {
+        font-size: 5vmin;
+    }
+    .about-content {
+        margin-top: 15xp;
+        text-align: center;
+    }
+    .about-content .d-block p {
+        font-size: 12px;
+    }
+}
+@media (min-width:576px) {
+    .about-content h2 {
+        font-size: 25px;
+    }
+    .about-content p {
+        font-size: 14px;
+    }
+}

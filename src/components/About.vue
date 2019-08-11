@@ -1,10 +1,10 @@
 <template>
     <div class="container mb-5" id="About">
         <div class="row">
-            <div class="col-sm-6">
+            <div class="col-md-6">
                 <img src="../assets/images/text.jpg" class="w-100" alt="text">
             </div>
-            <div class="col-sm-6">
+            <div class="col-md-6">
                 <div class="about-content">
                     <div class="d-block">
                         <h2>What is Lorem Ipsum?</h2>

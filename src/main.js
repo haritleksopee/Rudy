@@ -6,6 +6,7 @@ import router from './router';
 import 'bootstrap';
 import './assets/custom.css';
 import axios from 'axios';
+
 Vue.config.productionTip = false;
 
 /* eslint-disable no-new */
